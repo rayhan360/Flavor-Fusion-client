@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation, Autoplay } from "swiper/modules";
@@ -87,7 +87,7 @@ const BrandProducts = () => {
                                     </h5>
 
                                     <p className="block font-sans text-base antialiased font-light leading-relaxed  text-inherit">
-                                        Type of Product : {product.type}
+                                        Category : {product.type}
                                     </p>
                                     <div className="flex justify-between">
                                         <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
@@ -99,20 +99,24 @@ const BrandProducts = () => {
                                     </div>
                                 </div>
                                 <div className="p-6 pt-0 flex gap-5">
-                                    <button
-                                        className="select-none rounded-lg bg-[#ff9d2d] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                                        type="button"
-                                        data-ripple-light="true"
-                                    >
-                                        Details button
-                                    </button>
-                                    <button
-                                        className="select-none rounded-lg bg-[#ff9d2d] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                                        type="button"
-                                        data-ripple-light="true"
-                                    >
-                                        Update Product
-                                    </button>
+                                    <Link to={`/productDetails/${product._id}`}>
+                                        <button
+                                            className="select-none rounded-lg bg-[#ff9d2d] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                                            type="button"
+                                            data-ripple-light="true"
+                                        >
+                                            Details button
+                                        </button>
+                                    </Link>
+                                    <Link>
+                                        <button
+                                            className="select-none rounded-lg bg-[#352b1f] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                                            type="button"
+                                            data-ripple-light="true"
+                                        >
+                                            Update Product
+                                        </button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>)
