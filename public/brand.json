@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "brand_name": "Coca-Cola",
+      "brand_img": "https://i.ibb.co/mqLYSdz/coca.png",
+      "slider1": "https://i.ibb.co/zF52kmT/cocal1.png",
+      "slider2": "https://i.ibb.co/cJxydbp/coca2.png",
+      "slider3": "https://i.ibb.co/wCVdmsS/coca3.jpg"
+    },
+    {
+      "id": 2,
+      "brand_name": "McDonald's",
+      "brand_img": "https://i.ibb.co/9N10pvm/mcdonald2.png",
+      "slider1": "https://i.ibb.co/DD5wQ3Y/mc1.jpg",
+      "slider2": "https://i.ibb.co/MhvCrLx/mc2.jpg",
+      "slider3": "https://i.ibb.co/tHDSSMt/mc3.jpg"
+    },
+    {
+      "id": 3,
+      "brand_name": "Starbucks",
+      "brand_img": "https://i.ibb.co/54bgY5T/sturbucks.png",
+      "slider1": "https://i.ibb.co/gZZTWSf/str1.jpg",
+      "slider2": "https://i.ibb.co/Jq0x8Gp/str2.png",
+      "slider3": "https://i.ibb.co/C0YX81b/str3.jpg"
+    },
+    {
+      "id": 4,
+      "brand_name": "Nestlé",
+      "brand_img": "https://i.ibb.co/D72x9Yk/nestle.png",
+      "slider1": "https://i.ibb.co/SXF8JfT/nes1.jpg",
+      "slider2": "https://i.ibb.co/DQN3hBw/nes2.jpg",
+      "slider3": "https://i.ibb.co/fvJvbs6/nes3.jpg"
+    },
+    {
+      "id": 5,
+      "brand_name": "PepsiCo",
+      "brand_img": "https://i.ibb.co/wJHSZcR/pepsi.png",
+      "slider1": "https://i.ibb.co/hdVWZn5/pep1.png",
+      "slider2": "https://i.ibb.co/85LMHHf/pep2.jpg",
+      "slider3": "https://i.ibb.co/zSbSYGt/pep3.jpg"
+    },
+    {
+      "id": 6,
+      "brand_name": "Kellogg's",
+      "brand_img": "https://i.ibb.co/SJPFm2P/kellogs.png",
+      "slider1": "https://i.ibb.co/fkQQjWj/ke1.jpg",
+      "slider2": "https://i.ibb.co/HxyYZ2s/ke2.png",
+      "slider3": "https://i.ibb.co/WDQk25n/ke3.png"
+    }
+  ]
+  
