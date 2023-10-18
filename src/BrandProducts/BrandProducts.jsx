@@ -18,7 +18,7 @@ const BrandProducts = () => {
     const [noData, setNoData] = useState(true)
 
     useEffect(() => {
-        fetch('http://localhost:3000/product')
+        fetch('https://flavor-fusion-server-chi.vercel.app/product')
             .then(res => res.json())
             .then(data => {
                 setProduct(data)

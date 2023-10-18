@@ -29,17 +29,17 @@ const Router = createBrowserRouter([
             {
                 path: '/myCart',
                 element: <MyCart></MyCart>,
-                loader: () => fetch('http://localhost:3000/cart')
+                loader: () => fetch('https://flavor-fusion-server-chi.vercel.app/cart')
             },
             {
                 path: '/productDetails/:id',
                 element: <BrandProductsDetials></BrandProductsDetials>,
-                loader: () => fetch('http://localhost:3000/product')
+                loader: () => fetch('https://flavor-fusion-server-chi.vercel.app/product')
             },
             {
                 path: '/updateProducts/:id',
                 element: <UpdateProducts></UpdateProducts>,
-                loader: ({ params }) => fetch(`http://localhost:3000/product/${params.id}`)
+                loader: ({ params }) => fetch(`https://flavor-fusion-server-chi.vercel.app/product/${params.id}`)
             }
         ]
     }

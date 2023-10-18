@@ -15,7 +15,7 @@ const AddProduct = () => {
         console.log(newProduct);
 
         // send data to the server
-        fetch('http://localhost:3000/product', {
+        fetch('https://flavor-fusion-server-chi.vercel.app/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

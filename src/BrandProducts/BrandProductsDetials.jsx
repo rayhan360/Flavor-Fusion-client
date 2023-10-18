@@ -9,7 +9,7 @@ const BrandProductsDetials = () => {
     const newData = { name: name, brand: brand, img:img, type:type, rating:rating, price:price, description:description }
 
     const handleAddToCart = () => {
-        fetch('http://localhost:3000/cart', {
+        fetch('https://flavor-fusion-server-chi.vercel.app/cart', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

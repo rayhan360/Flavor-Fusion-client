@@ -21,7 +21,7 @@ const UpdateProducts = () => {
         console.log(updatedProduct);
 
         // updated operation
-        fetch(`http://localhost:3000/product/${_id}`, {
+        fetch(`https://flavor-fusion-server-chi.vercel.app/product/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
