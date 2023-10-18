@@ -1,11 +1,33 @@
 import { useLoaderData, useParams } from "react-router-dom";
-
+import Swal from 'sweetalert2'
 
 const BrandProductsDetials = () => {
     const detailsProduct = useLoaderData()
     const { id } = useParams()
     const findData = detailsProduct.find(details => details._id === id)
     const { name, brand, img, type, rating, price, description } = findData;
+
+    const handleAddToCart = () => {
+        fetch('http://localhost:3000/cart', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(findData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Product Added Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    })
+                }
+            })
+    }
 
     return (
         <div>
@@ -34,7 +56,7 @@ const BrandProductsDetials = () => {
                                     Product Rating- {rating} out of 5
                                 </p>
                                 <div className="flex items-center mt-6">
-                                    <button className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700">
+                                    <button onClick={handleAddToCart} className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700">
                                         Add to Cart
                                     </button>
                                     <div className="ml-4">
