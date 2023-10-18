@@ -58,10 +58,10 @@ const BrandProducts = () => {
                 </SwiperSlide>
             </Swiper>
 
-            <div className="my-10 grid grid-cols-4">
+            <div className="my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
                 {
                     filterData.map(product => <div key={product._id}>
-                        <div className="flex flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border">
+                        <div className="flex flex-col text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
                             <div className=" mx-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
                                 <img
                                 className="h-80 w-96"
@@ -90,13 +90,20 @@ const BrandProducts = () => {
                                     </p>
                                 </div>
                             </div>
-                            <div className="p-6 pt-0">
+                            <div className="p-6 pt-0 flex gap-5">
                                 <button
-                                    className="select-none rounded-lg bg-pink-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                                    className="select-none rounded-lg bg-[#ff9d2d] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                                     type="button"
                                     data-ripple-light="true"
                                 >
                                     Details button
+                                </button>
+                                <button
+                                    className="select-none rounded-lg bg-[#ff9d2d] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                                    type="button"
+                                    data-ripple-light="true"
+                                >
+                                    Update Product
                                 </button>
                             </div>
                         </div>
