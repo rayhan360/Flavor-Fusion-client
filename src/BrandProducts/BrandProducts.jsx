@@ -15,12 +15,14 @@ const BrandProducts = () => {
     const { slider1, slider2, slider3, brand_name } = findData;
 
     const [product, setProduct] = useState([])
+    const [noData, setNoData] = useState(true)
 
     useEffect(() => {
         fetch('http://localhost:3000/product')
             .then(res => res.json())
             .then(data => {
                 setProduct(data)
+                setNoData(false)
             })
     }, [])
 
@@ -39,6 +41,7 @@ const BrandProducts = () => {
     }
 
     return (
+
         <div>
             <Swiper {...setting} navigation={true}  >
                 <SwiperSlide>
@@ -60,54 +63,59 @@ const BrandProducts = () => {
 
             <div className="my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
                 {
-                    filterData.map(product => <div key={product._id}>
-                        <div className="flex flex-col text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
-                            <div className=" mx-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
-                                <img
-                                className="h-80 w-96"
-                                    src={product.img}
-                                    alt="img-blur-shadow"
-                                    layout="fill"
-                                />
-                            </div>
-                            <div className="p-6">
-                                <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
-                                    Product Brand: {product.brand}
-                                </p>
-                                <h5 className="block mb-2 font-sans text-3xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
-                                    Name: {product.name}
-                                </h5>
+                    noData ?
+                        <div className="flex justify-center">
+                            <span className="loading loading-bars loading-lg"></span>
+                        </div>
+                        :
+                        filterData.map(product => <div key={product._id}>
+                            <div className="flex flex-col text-gray-700 bg-white shadow-md h-[600px] rounded-xl bg-clip-border">
+                                <div className=" mx-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
+                                    <img
+                                        className="h-80 w-96"
+                                        src={product.img}
+                                        alt="img-blur-shadow"
+                                        layout="fill"
+                                    />
+                                </div>
+                                <div className="p-6">
+                                    <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                                        Product Brand: {product.brand}
+                                    </p>
+                                    <h5 className="block mb-2 font-sans text-3xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+                                        Name: {product.name}
+                                    </h5>
 
-                                <p className="block font-sans text-base antialiased font-light leading-relaxed  text-inherit">
-                                    Type of Product : {product.type}
-                                </p>
-                                <div className="flex justify-between">
-                                    <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
-                                        Price: ${product.price}
+                                    <p className="block font-sans text-base antialiased font-light leading-relaxed  text-inherit">
+                                        Type of Product : {product.type}
                                     </p>
-                                    <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
-                                        Product Rating- {product.rating} out of 5
-                                    </p>
+                                    <div className="flex justify-between">
+                                        <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                                            Price: ${product.price}
+                                        </p>
+                                        <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                                            Product Rating- {product.rating} out of 5
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="p-6 pt-0 flex gap-5">
+                                    <button
+                                        className="select-none rounded-lg bg-[#ff9d2d] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                                        type="button"
+                                        data-ripple-light="true"
+                                    >
+                                        Details button
+                                    </button>
+                                    <button
+                                        className="select-none rounded-lg bg-[#ff9d2d] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                                        type="button"
+                                        data-ripple-light="true"
+                                    >
+                                        Update Product
+                                    </button>
                                 </div>
                             </div>
-                            <div className="p-6 pt-0 flex gap-5">
-                                <button
-                                    className="select-none rounded-lg bg-[#ff9d2d] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                                    type="button"
-                                    data-ripple-light="true"
-                                >
-                                    Details button
-                                </button>
-                                <button
-                                    className="select-none rounded-lg bg-[#ff9d2d] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                                    type="button"
-                                    data-ripple-light="true"
-                                >
-                                    Update Product
-                                </button>
-                            </div>
-                        </div>
-                    </div>)
+                        </div>)
                 }
             </div>
 
