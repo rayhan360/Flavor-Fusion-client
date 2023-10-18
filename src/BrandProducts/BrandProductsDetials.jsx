@@ -6,6 +6,7 @@ const BrandProductsDetials = () => {
     const { id } = useParams()
     const findData = detailsProduct.find(details => details._id === id)
     const { name, brand, img, type, rating, price, description } = findData;
+    const newData = { name: name, brand: brand, img:img, type:type, rating:rating, price:price, description:description }
 
     const handleAddToCart = () => {
         fetch('http://localhost:3000/cart', {
@@ -13,7 +14,7 @@ const BrandProductsDetials = () => {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(findData)
+            body: JSON.stringify(newData)
         })
             .then(res => res.json())
             .then(data => {
