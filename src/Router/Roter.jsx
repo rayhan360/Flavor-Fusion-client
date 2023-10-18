@@ -5,12 +5,13 @@ import AddProduct from "../AddProduct/AddProduct";
 import BrandProducts from "../BrandProducts/BrandProducts";
 import BrandProductsDetials from "../BrandProducts/BrandProductsDetials";
 import MyCart from "../MyCart/MyCart";
+import UpdateProducts from "../UpdateProducts/UpdateProducts";
 
 
 const Router = createBrowserRouter([
     {
         path: '/',
-        element:<MainLayout></MainLayout>,
+        element: <MainLayout></MainLayout>,
         children: [
             {
                 path: '/',
@@ -19,7 +20,7 @@ const Router = createBrowserRouter([
             {
                 path: '/brandProducts/:id',
                 element: <BrandProducts></BrandProducts>,
-                loader: ()=> fetch('/brand.json')
+                loader: () => fetch('/brand.json')
             },
             {
                 path: '/addProducts',
@@ -34,6 +35,11 @@ const Router = createBrowserRouter([
                 path: '/productDetails/:id',
                 element: <BrandProductsDetials></BrandProductsDetials>,
                 loader: () => fetch('http://localhost:3000/product')
+            },
+            {
+                path: '/updateProducts/:id',
+                element: <UpdateProducts></UpdateProducts>,
+                loader: ({ params }) => fetch(`http://localhost:3000/product/${params.id}`)
             }
         ]
     }
