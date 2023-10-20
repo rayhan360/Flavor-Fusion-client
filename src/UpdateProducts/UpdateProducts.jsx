@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -42,6 +43,9 @@ const UpdateProducts = () => {
             })
 
     }
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    },[])
     return (
         <div>
             <section className="contact bg-contact-bg bg-cover bg-center bg-fixed my-10">

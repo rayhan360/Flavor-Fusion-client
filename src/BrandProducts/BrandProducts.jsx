@@ -25,6 +25,9 @@ const BrandProducts = () => {
                 setNoData(false)
             })
     }, [])
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    },[])
 
     const filterData = product.filter(pro => pro.brand === brand_name)
     // console.log(filterData);

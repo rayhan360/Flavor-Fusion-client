@@ -8,6 +8,7 @@ import MyCart from "../MyCart/MyCart";
 import UpdateProducts from "../UpdateProducts/UpdateProducts";
 import Registration from "../Authentication/Registration";
 import Login from "../Authentication/Login";
+import PrivateRouter from "./PrivateRouter";
 
 
 const Router = createBrowserRouter([
@@ -26,30 +27,30 @@ const Router = createBrowserRouter([
             },
             {
                 path: '/addProducts',
-                element: <AddProduct></AddProduct>
+                element: <PrivateRouter><AddProduct></AddProduct></PrivateRouter>
             },
             {
                 path: '/myCart',
-                element: <MyCart></MyCart>,
+                element: <PrivateRouter><MyCart></MyCart></PrivateRouter>,
                 loader: () => fetch('https://flavor-fusion-server-chi.vercel.app/cart')
             },
             {
                 path: '/productDetails/:id',
-                element: <BrandProductsDetials></BrandProductsDetials>,
+                element: <PrivateRouter><BrandProductsDetials></BrandProductsDetials></PrivateRouter>,
                 loader: () => fetch('https://flavor-fusion-server-chi.vercel.app/product')
             },
             {
                 path: '/updateProducts/:id',
-                element: <UpdateProducts></UpdateProducts>,
+                element: <PrivateRouter><UpdateProducts></UpdateProducts></PrivateRouter>,
                 loader: ({ params }) => fetch(`https://flavor-fusion-server-chi.vercel.app/product/${params.id}`)
             },
             {
                 path: '/registration',
                 element: <Registration></Registration>
-            }, 
+            },
             {
                 path: "/login",
-                element:<Login></Login>
+                element: <Login></Login>
             }
         ]
     }

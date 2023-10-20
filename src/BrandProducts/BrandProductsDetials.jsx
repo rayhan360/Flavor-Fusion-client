@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Swal from 'sweetalert2'
 
@@ -29,6 +30,10 @@ const BrandProductsDetials = () => {
                 }
             })
     }
+
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    },[])
 
     return (
         <div>

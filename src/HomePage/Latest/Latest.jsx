@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const Latest = () => {
@@ -31,7 +32,7 @@ const Latest = () => {
                             alt="img-blur-shadow"
                         />
                     </div>
-                    <div className="p-6">
+                    <div className="p-6 flex-grow">
                         <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
                             Brand: {latest[0].brand}
                         </p>
@@ -51,6 +52,15 @@ const Latest = () => {
                             </p>
                         </div>
                     </div>
+                    <Link to={`/productDetails/${latest[0]._id}`}>
+                        <button
+                            className="select-none mb-3 w-full rounded-lg bg-[#ff9d2d] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                            type="button"
+                            data-ripple-light="true"
+                        >
+                            Details button
+                        </button>
+                    </Link>
                 </div>
                 <div className="flex flex-col text-gray-700 bg-white shadow-md h-[600px] rounded-xl bg-clip-border">
                     <div className=" mx-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
@@ -60,7 +70,7 @@ const Latest = () => {
                             alt="img-blur-shadow"
                         />
                     </div>
-                    <div className="p-6">
+                    <div className="p-6 flex-grow">
                         <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
                             Brand: {latest[8].brand}
                         </p>
@@ -80,6 +90,15 @@ const Latest = () => {
                             </p>
                         </div>
                     </div>
+                    <Link to={`/productDetails/${latest[8]._id}`}>
+                        <button
+                            className="select-none mb-3 w-full rounded-lg bg-[#ff9d2d] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                            type="button"
+                            data-ripple-light="true"
+                        >
+                            Details button
+                        </button>
+                    </Link>
                 </div>
                 <div className="flex flex-col text-gray-700 bg-white shadow-md h-[600px] rounded-xl bg-clip-border">
                     <div className=" mx-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
@@ -89,7 +108,7 @@ const Latest = () => {
                             alt="img-blur-shadow"
                         />
                     </div>
-                    <div className="p-6">
+                    <div className="p-6 flex-grow">
                         <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
                             Brand: {latest[12].brand}
                         </p>
@@ -109,6 +128,15 @@ const Latest = () => {
                             </p>
                         </div>
                     </div>
+                    <Link to={`/productDetails/${latest[12]._id}`}>
+                        <button
+                            className="select-none mb-3 w-full rounded-lg bg-[#ff9d2d] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                            type="button"
+                            data-ripple-light="true"
+                        >
+                            Details button
+                        </button>
+                    </Link>
                 </div>
                 <div className="flex flex-col text-gray-700 bg-white shadow-md h-[600px] rounded-xl bg-clip-border">
                     <div className=" mx-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
@@ -118,7 +146,7 @@ const Latest = () => {
                             alt="img-blur-shadow"
                         />
                     </div>
-                    <div className="p-6">
+                    <div className="p-6 flex-grow">
                         <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
                             Brand: {latest[3].brand}
                         </p>
@@ -137,7 +165,17 @@ const Latest = () => {
                                 Rating- {latest[3].rating} out of 5
                             </p>
                         </div>
+
                     </div>
+                    <Link to={`/productDetails/${latest[3]._id}`}>
+                        <button
+                            className="select-none mb-3 w-full rounded-lg bg-[#ff9d2d] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                            type="button"
+                            data-ripple-light="true"
+                        >
+                            Details button
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>
