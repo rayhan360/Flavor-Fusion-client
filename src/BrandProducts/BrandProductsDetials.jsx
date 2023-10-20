@@ -1,13 +1,16 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Swal from 'sweetalert2'
+import { AuthContext } from "../Providers/AuthProviders";
 
 const BrandProductsDetials = () => {
+    const { user } = useContext(AuthContext)
+    console.log(user);
     const detailsProduct = useLoaderData()
     const { id } = useParams()
     const findData = detailsProduct.find(details => details._id === id)
     const { name, brand, img, type, rating, price, description } = findData;
-    const newData = { name: name, brand: brand, img:img, type:type, rating:rating, price:price, description:description }
+    const newData = { name: name, brand: brand, img: img, type: type, rating: rating, price: price, description: description, email:user.email }
 
     const handleAddToCart = () => {
         fetch('https://flavor-fusion-server-chi.vercel.app/cart', {
@@ -31,9 +34,9 @@ const BrandProductsDetials = () => {
             })
     }
 
-    useEffect(()=>{
-        window.scrollTo(0,0)
-    },[])
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <div>

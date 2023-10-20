@@ -8,7 +8,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import noData from '../assets/noData.png'
 
 
+
 const BrandProducts = () => {
+
     const brandProduct = useLoaderData()
     const { id } = useParams()
     const intId = parseInt(id)
@@ -107,6 +109,7 @@ const BrandProducts = () => {
                                                                 <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
                                                                     Product Rating- {product.rating} out of 5
                                                                 </p>
+
                                                             </div>
                                                         </div>
                                                         <div className="p-6 pt-0 flex gap-5">
