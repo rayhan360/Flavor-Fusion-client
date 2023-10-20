@@ -60,7 +60,7 @@ const MyCart = () => {
                                 <button onClick={()=> handleDelete(det._id)}>
                                     <img className="w-6" src={deleteIcons} alt="" />
                                 </button>
-                                <Link to={`/productDetails/${det._id}`}>
+                                <Link>
                                     <img className="w-6" src={eye} alt="" />
                                 </Link>
                             </div>

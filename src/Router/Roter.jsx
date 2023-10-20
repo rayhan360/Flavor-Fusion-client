@@ -6,6 +6,8 @@ import BrandProducts from "../BrandProducts/BrandProducts";
 import BrandProductsDetials from "../BrandProducts/BrandProductsDetials";
 import MyCart from "../MyCart/MyCart";
 import UpdateProducts from "../UpdateProducts/UpdateProducts";
+import Registration from "../Authentication/Registration";
+import Login from "../Authentication/Login";
 
 
 const Router = createBrowserRouter([
@@ -40,6 +42,14 @@ const Router = createBrowserRouter([
                 path: '/updateProducts/:id',
                 element: <UpdateProducts></UpdateProducts>,
                 loader: ({ params }) => fetch(`https://flavor-fusion-server-chi.vercel.app/product/${params.id}`)
+            },
+            {
+                path: '/registration',
+                element: <Registration></Registration>
+            }, 
+            {
+                path: "/login",
+                element:<Login></Login>
             }
         ]
     }

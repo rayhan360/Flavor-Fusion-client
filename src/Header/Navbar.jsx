@@ -1,7 +1,8 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { useState } from "react";
 import logo from '../assets/logo.png'
+import './Navbar.css'
 
 const Navbar = () => {
     const [open, setOpen] = useState(false)
@@ -32,7 +33,27 @@ const Navbar = () => {
                                     <NavLink to="/myCart">MyCart</NavLink>
                                 </li>
                             </ul>
-                            <div>
+                            <div className="mb-5 md:mb-0">
+                                <Link to="/login">
+                                    <button
+                                        className="bg-indigo-600 text-white px-5 py-2 rounded-md"
+                                        type="button"
+                                        data-ripple-light="true"
+                                    >
+                                        Sign In
+                                    </button>
+                                </Link>
+                                <Link to="/registration">
+                                    <button
+                                        className="bg-indigo-600 text-white px-5 py-2 rounded-md ml-3"
+                                        type="button"
+                                        data-ripple-light="true"
+                                    >
+                                        Sign Up
+                                    </button>
+                                </Link>
+                            </div>
+                            {/* <div>
                                 {
                                     <div className=" flex items-center">
                                         <div className="dropdown dropdown-end">
@@ -54,7 +75,7 @@ const Navbar = () => {
                                         </div>
                                     </div>
                                 }
-                            </div>
+                            </div> */}
                         </div>
 
                     </nav>
