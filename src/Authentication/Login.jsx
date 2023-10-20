@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import SocialAuth from './SocialAuth/SocialAuth';
+import { Link } from 'react-router-dom';
 const Login = () => {
     const [showPassword, setShowPassword] = useState()
     return (
@@ -71,15 +72,15 @@ const Login = () => {
                     </form>
 
                     <SocialAuth></SocialAuth>
-                    {/* <p className="mt-4 block text-center font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
+                    <p className="mt-4 block text-center font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
                         Do not have an account?
                         <Link to="/registration"
-                            className="font-medium text-[#43ba7f] transition-colors hover:text-blue-700"
+                            className="font-medium text-indigo-600 transition-colors hover:text-blue-700"
                             href="#"
                         >
                             Sign Up
                         </Link>
-                    </p> */}
+                    </p>
                 </div>
 
             </div>

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import {  GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { createContext, useState } from "react";
+import {  GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
 
 export const AuthContext = createContext(null)
@@ -18,10 +18,41 @@ const AuthProviders = ({children}) => {
         return signInWithPopup(auth, googleAuthProvider)
     }
 
+    // create user
+    const createUser = (email, password) => {
+        setLoading(true)
+        return createUserWithEmailAndPassword(auth, email, password)
+    }
+
+    // sign in
+    const logIn = (email, password) => {
+        setLoading(true)
+        return signInWithEmailAndPassword(auth, email, password)
+    }
+
+
+    // sign out
+    const logOut = () => {
+        return signOut(auth)
+    }
+
+
+    // observe account
+    useEffect(() => {
+        const unSubscribe = onAuthStateChanged(auth, currentUser => {
+            setUser(currentUser)
+            setLoading(false)
+        })
+        return () => unSubscribe()
+    }, [])
+
     const authInfo = {
         user,
         loading,
-        googleSignIn
+        googleSignIn,
+        createUser,
+        logIn,
+        logOut
 
     }
     return (

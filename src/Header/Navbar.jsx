@@ -1,11 +1,14 @@
 import { Link, NavLink } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
-import { useState } from "react";
+import { useContext, useState } from "react";
 import logo from '../assets/logo.png'
 import './Navbar.css'
+import { AuthContext } from "../Providers/AuthProviders";
 
 const Navbar = () => {
     const [open, setOpen] = useState(false)
+    const { user, logOut } = useContext(AuthContext)
+
     return (
         <div className="bg-[#262626]">
             <div className="flex justify-between py-6 items-center max-w-7xl mx-auto">
@@ -33,49 +36,52 @@ const Navbar = () => {
                                     <NavLink to="/myCart">MyCart</NavLink>
                                 </li>
                             </ul>
-                            <div className="mb-5 md:mb-0">
-                                <Link to="/login">
-                                    <button
-                                        className="bg-indigo-600 text-white px-5 py-2 rounded-md"
-                                        type="button"
-                                        data-ripple-light="true"
-                                    >
-                                        Sign In
-                                    </button>
-                                </Link>
-                                <Link to="/registration">
-                                    <button
-                                        className="bg-indigo-600 text-white px-5 py-2 rounded-md ml-3"
-                                        type="button"
-                                        data-ripple-light="true"
-                                    >
-                                        Sign Up
-                                    </button>
-                                </Link>
-                            </div>
-                            {/* <div>
-                                {
-                                    <div className=" flex items-center">
-                                        <div className="dropdown dropdown-end">
-                                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                                <div className="w-10 rounded-full">
 
-                                                </div>
-                                            </label>
-                                            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-96">
-                                                <li>
-                                                    <button className="text-black text-base"><span className="font-medium">Name:</span> </button>
-                                                </li>
-                                                <li><button className="text-black text-base"><span className="font-medium">Email:</span></button></li>
-                                            </ul>
+                            <div>
+                                {
+                                    user ?
+                                        <div className=" flex items-center gap-3">
+                                            <div className="dropdown dropdown-end">
+                                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                                    <div className="w-10 rounded-full">
+                                                        <img src={user.photoURL} alt={user.displayName} />
+                                                    </div>
+                                                </label>
+                                                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-96">
+                                                    <li>
+                                                        <button className="text-black text-base"><span className="font-medium">Name:</span> {user.displayName}</button>
+                                                    </li>
+                                                    <li><button className="text-black text-base"><span className="font-medium">Email:</span> {user.email ? user.email : "email not found"}</button></li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <button onClick={logOut} className="bg-indigo-600 text-white px-5 py-2 rounded-md"
+                                                >Sign Out</button>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <button className="p-3 rounded-md bg-[#ff9d2d] text-white"
-                                            >Sign Out</button>
+                                        :
+                                        <div className="mb-5 md:mb-0">
+                                            <Link to="/login">
+                                                <button
+                                                    className="bg-indigo-600 text-white px-5 py-2 rounded-md"
+                                                    type="button"
+                                                    data-ripple-light="true"
+                                                >
+                                                    Sign In
+                                                </button>
+                                            </Link>
+                                            <Link to="/registration">
+                                                <button
+                                                    className="bg-indigo-600 text-white px-5 py-2 rounded-md ml-3"
+                                                    type="button"
+                                                    data-ripple-light="true"
+                                                >
+                                                    Sign Up
+                                                </button>
+                                            </Link>
                                         </div>
-                                    </div>
                                 }
-                            </div> */}
+                            </div>
                         </div>
 
                     </nav>
