@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import SocialAuth from './SocialAuth/SocialAuth';
