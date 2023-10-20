@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Ratings from "../../BrandProducts/Ratings";
 
 
 const Latest = () => {
@@ -24,7 +25,7 @@ const Latest = () => {
                 <h1 className="text-[#ff9d2d] text-center text-5xl font-bold">Our Popular Products</h1>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-3">
-                <div className="flex flex-col   shadow-md h-[600px] rounded-xl bg-clip-border">
+                <div className="flex flex-col shadow-md h-[600px] rounded-xl bg-clip-border">
                     <div className=" mx-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
                         <img
                             className="h-80 w-96"
@@ -32,11 +33,11 @@ const Latest = () => {
                             alt="img-blur-shadow"
                         />
                     </div>
-                    <div className="p-6 flex-grow">
+                    <div className="p-6 flex-grow flex flex-col">
                         <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
                             Brand: {latest[2].brand}
                         </p>
-                        <h5 className="block mb-2 font-sans text-3xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+                        <h5 className="block flex-grow mb-2 font-sans text-3xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
                             Name: {latest[2].name}
                         </h5>
 
@@ -48,7 +49,7 @@ const Latest = () => {
                                 Price: ${latest[2].price}
                             </p>
                             <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
-                                Rating- {latest[2].rating} out of 5
+                                <Ratings rating={latest[2].rating}></Ratings>
                             </p>
                         </div>
                     </div>
@@ -70,11 +71,11 @@ const Latest = () => {
                             alt="img-blur-shadow"
                         />
                     </div>
-                    <div className="p-6 flex-grow">
+                    <div className="p-6 flex-grow flex flex-col">
                         <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
                             Brand: {latest[8].brand}
                         </p>
-                        <h5 className="block mb-2 font-sans text-3xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+                        <h5 className="block mb-2 flex-grow font-sans text-3xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
                             Name: {latest[8].name}
                         </h5>
 
@@ -86,7 +87,7 @@ const Latest = () => {
                                 Price: ${latest[8].price}
                             </p>
                             <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
-                                Rating- {latest[8].rating} out of 5
+                            <Ratings rating={latest[8].rating}></Ratings>
                             </p>
                         </div>
                     </div>
@@ -124,7 +125,7 @@ const Latest = () => {
                                 Price: ${latest[10].price}
                             </p>
                             <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
-                                Rating- {latest[10].rating} out of 5
+                            <Ratings rating={latest[10].rating}></Ratings>
                             </p>
                         </div>
                     </div>
@@ -146,11 +147,11 @@ const Latest = () => {
                             alt="img-blur-shadow"
                         />
                     </div>
-                    <div className="p-6 flex-grow">
+                    <div className="p-6 flex-grow flex flex-col">
                         <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
                             Brand: {latest[3].brand}
                         </p>
-                        <h5 className="block mb-2 font-sans text-3xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+                        <h5 className="block flex-grow mb-2 font-sans text-3xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
                             Name: {latest[3].name}
                         </h5>
 
@@ -162,7 +163,7 @@ const Latest = () => {
                                 Price: ${latest[3].price}
                             </p>
                             <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
-                                Rating- {latest[3].rating} out of 5
+                            <Ratings rating={latest[3].rating}></Ratings>
                             </p>
                         </div>
 

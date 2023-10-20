@@ -6,6 +6,10 @@ import "swiper/css/navigation";
 import { Navigation, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import noData from '../assets/noData.png'
+import Ratings from "./Ratings";
+
+
+
 
 
 
@@ -60,17 +64,17 @@ const BrandProducts = () => {
                         <div>
                             <Swiper {...setting} navigation={true}  >
                                 <SwiperSlide>
-                                    <div classNameName=''>
+                                    <div className=''>
                                         <img src={slider1} className='h-[500px] w-screen' alt="" />
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    <div classNameName=''>
+                                    <div className=''>
                                         <img src={slider2} className='h-[500px] w-screen' alt="" />
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    <div classNameName=''>
+                                    <div className=''>
                                         <img src={slider3} className='h-[500px] w-screen' alt="" />
                                     </div>
                                 </SwiperSlide>
@@ -91,11 +95,11 @@ const BrandProducts = () => {
                                                                 layout="fill"
                                                             />
                                                         </div>
-                                                        <div className="p-6">
+                                                        <div className="p-6 flex flex-col flex-grow">
                                                             <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
                                                                 Product Brand: {product.brand}
                                                             </p>
-                                                            <h5 className="block mb-2 font-sans text-3xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+                                                            <h5 className="block flex-grow mb-2 font-sans text-3xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
                                                                 Name: {product.name}
                                                             </h5>
 
@@ -107,9 +111,9 @@ const BrandProducts = () => {
                                                                     Price: ${product.price}
                                                                 </p>
                                                                 <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
-                                                                    Product Rating- {product.rating} out of 5
+                                                                    <Ratings rating={product.rating}></Ratings>
                                                                 </p>
-
+                                                                
                                                             </div>
                                                         </div>
                                                         <div className="p-6 pt-0 flex gap-5">

@@ -43,7 +43,7 @@ const BrandProductsDetials = () => {
             <div className="bg-gray-100">
                 <div className="container mx-auto p-8">
                     <div className="bg-white rounded-lg shadow-lg p-6">
-                        <div className="grid grid-cols-2 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div>
                                 <img
                                     src={img}
