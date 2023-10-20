@@ -48,7 +48,7 @@ const Navbar = () => {
                                                         <img src={user.photoURL} alt={user.displayName} />
                                                     </div>
                                                 </label>
-                                                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-96">
+                                                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 md:w-96">
                                                     <li>
                                                         <button className="text-black text-base"><span className="font-medium">Name:</span> {user.displayName}</button>
                                                     </li>

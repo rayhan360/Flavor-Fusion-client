@@ -7,6 +7,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import noData from '../assets/noData.png'
 import Ratings from "./Ratings";
+import { Helmet } from "react-helmet";
 
 
 
@@ -137,8 +138,12 @@ const BrandProducts = () => {
                                                             </Link>
                                                         </div>
                                                     </div>
+                                                    <Helmet>
+                                                        <title>{product.brand}</title>
+                                                    </Helmet>
                                                 </div>
                                             )
+                                            
                                         }
                                     </div>
                                 }

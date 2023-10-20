@@ -6,6 +6,7 @@ import { AuthContext } from '../Providers/AuthProviders';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import { updateProfile } from 'firebase/auth';
+import { Helmet } from 'react-helmet';
 
 const Registration = () => {
     const [showPassword, setShowPassword] = useState(false)
@@ -67,7 +68,10 @@ const Registration = () => {
     }
     return (
         <div>
-            <div className="bg-set" >
+            <div>
+                <Helmet>
+                    <title>Registration</title>
+                </Helmet>
                 <div className="flex justify-center">
                     <div className="mt-20 flex flex-col bg-white p-10 rounded-xl bg-clip-border text-gray-700 shadow-none">
                         <h4 className="block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">

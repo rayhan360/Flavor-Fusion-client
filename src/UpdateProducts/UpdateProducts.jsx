@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -48,6 +49,8 @@ const UpdateProducts = () => {
     },[])
     return (
         <div>
+            <Helmet></Helmet>
+            <title>Update Product</title>
             <section className="contact bg-contact-bg bg-cover bg-center bg-fixed my-10">
                 <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 mx-auto max-w-3xl">
                     <h3 className="text-3xl font-bold text-center mb-6">Update Your Product</h3>

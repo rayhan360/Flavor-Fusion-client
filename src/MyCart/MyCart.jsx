@@ -4,6 +4,7 @@ import eye from '../assets/eye.png'
 import Swal from "sweetalert2";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProviders";
+import { Helmet } from "react-helmet";
 
 
 const MyCart = () => {
@@ -50,6 +51,9 @@ const MyCart = () => {
     }
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <Helmet>
+                <title>My Cart</title>
+            </Helmet>
             {
                 cartDetails.map(det => <div className="bg-gray-100 p-8" key={det._id}>
                     <div>

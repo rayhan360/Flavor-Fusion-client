@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet';
 import Swal from 'sweetalert2'
 
 const AddProduct = () => {
@@ -39,6 +40,11 @@ const AddProduct = () => {
     return (
         <div>
             <section className="contact bg-contact-bg bg-cover bg-center bg-fixed my-10">
+
+                <Helmet>
+                    <title>Add Product</title>
+                </Helmet>
+
                 <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 mx-auto max-w-3xl">
                     <h3 className="text-3xl font-bold text-center mb-6">Add Your Product</h3>
                     <div className="mb-4 flex flex-wrap -mx-3">

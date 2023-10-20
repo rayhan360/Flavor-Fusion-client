@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Swal from 'sweetalert2'
 import { AuthContext } from "../Providers/AuthProviders";
+import { Helmet } from "react-helmet";
 
 const BrandProductsDetials = () => {
     const { user } = useContext(AuthContext)
@@ -34,12 +35,15 @@ const BrandProductsDetials = () => {
             })
     }
 
-    useEffect(() => {
+useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
 
     return (
         <div>
+            <Helmet>
+                <title>{name}</title>
+            </Helmet>
             <div className="bg-gray-100">
                 <div className="container mx-auto p-8">
                     <div className="bg-white rounded-lg shadow-lg p-6">

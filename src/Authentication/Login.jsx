@@ -4,6 +4,7 @@ import SocialAuth from './SocialAuth/SocialAuth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../Providers/AuthProviders';
+import { Helmet } from 'react-helmet';
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState()
@@ -38,7 +39,10 @@ const Login = () => {
             })
     }
     return (
-        <div className="bg-set" >
+        <div>
+            <Helmet>
+                <title>Log In</title>
+            </Helmet>
             <div className="flex justify-center">
                 <div className="mt-20 flex flex-col bg-white p-10 rounded-xl bg-clip-border text-gray-700 shadow-none">
                     <h4 className="block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
