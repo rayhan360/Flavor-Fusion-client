@@ -21,7 +21,6 @@ const Registration = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         const terms = e.target.terms.checked;
-        console.log(name, photo, email, password, terms);
 
         // validation
         if (password.length < 6) {
@@ -46,10 +45,9 @@ const Registration = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result.user)
-                // swal("Login Successful", "Welcome back!", "success");
                 toast.success("user log in successful")
                 e.target.reset;
-                
+
                 // update profile
                 updateProfile(result.user, {
                     displayName: name,
@@ -60,7 +58,7 @@ const Registration = () => {
             })
             .catch(error => {
                 console.log(error.message)
-                if(error.code === "auth/email-already-in-use"){
+                if (error.code === "auth/email-already-in-use") {
                     toast.error("email already in use")
                 }
             })

@@ -2,10 +2,10 @@ import log from '../assets/logo.png'
 const Footer = () => {
     return (
         <div>
-            <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
+            <footer className="footer footer-center p-10 bg-[#262626] text-white shadow-lg mt-2">
                 <nav>
                     <img className="w-20" src={log} alt="logo of the website" />
-                    <h1 className="text-black">Flavor <span className="text-[#FF9D2D]">Fusion</span></h1>
+                    <h1 className="text-white">Flavor <span className="text-[#FF9D2D]">Fusion</span></h1>
                 </nav>
                 <nav className="grid grid-flow-col gap-4">
                     <a className="link link-hover">Home</a>

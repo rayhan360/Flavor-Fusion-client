@@ -9,6 +9,7 @@ const Navbar = () => {
     const [open, setOpen] = useState(false)
     const { user, logOut } = useContext(AuthContext)
 
+
     return (
         <div className="bg-[#262626]">
             <div className="flex justify-between py-6 items-center max-w-7xl mx-auto">
@@ -17,12 +18,12 @@ const Navbar = () => {
                     <h1 className="text-white">Flavor <span className="text-[#FF9D2D]">Fusion</span></h1>
                 </div>
                 <div className="">
-                    <div className="md:hidden text-2xl mr-8 mt-5 text-white" onClick={() => setOpen(!open)}>
+                    <div className="lg:hidden text-2xl mr-8 mt-5 text-white" onClick={() => setOpen(!open)}>
                         {
                             open === true ? <AiOutlineClose></AiOutlineClose> : <AiOutlineMenu></AiOutlineMenu>
                         }
                     </div>
-                    <nav className={`absolute bg-white z-50 lg:bg-transparent md:block md:static px-5 ${open ? 'right-1' : '-right-72'} ${open ? 'block' : 'hidden'}`}>
+                    <nav className={`absolute bg-white z-50 lg:bg-transparent lg:block lg:static px-5 ${open ? 'right-1' : '-right-72'} ${open ? 'block' : 'hidden'}`}>
                         <div className="flex flex-col md:flex-row gap-5 items-center">
                             <ul className={`flex flex-col md:flex-row gap-5 lg:text-white`}>
                                 <li>

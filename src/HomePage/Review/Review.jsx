@@ -10,12 +10,12 @@ const Review = () => {
         <div className="max-w-7xl mx-auto">
             <div className="my-10" data-aos="fade-top" data-aos-duration="1000">
                 <h1 className="text-[#ff9d2d] text-center text-5xl font-bold">What Our Clients Say</h1>
-                <p className="text-black font-semibold text-center tracking-widest mt-5">our happy customers say about us!!</p>
+                <p className=" font-semibold text-center tracking-widest mt-5">our happy customers say about us!!</p>
             </div>
             <div>
                 <Marquee pauseOnHover={true} speed={50}>
-                    <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
-                        <div className="relative mx-0 mt-4 flex items-center gap-4 overflow-hidden rounded-xl bg-transparent bg-clip-border pt-0 pb-8 text-gray-700 shadow-none">
+                    <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border  shadow-none">
+                        <div className="relative mx-0 mt-4 flex items-center gap-4 overflow-hidden rounded-xl  bg-clip-border pt-0 pb-8  shadow-none">
                             <img
                                 src={img1}
                                 alt="tania andrew"
@@ -106,8 +106,8 @@ const Review = () => {
                         </div>
                     </div>
                     {/* marquee 1 */}
-                    <div className="relative mx-20 flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
-                        <div className="relative mx-0 mt-4 flex items-center gap-4 overflow-hidden rounded-xl bg-transparent bg-clip-border pt-0 pb-8 text-gray-700 shadow-none">
+                    <div className="relative mx-20 flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border  shadow-none">
+                        <div className="relative mx-0 mt-4 flex items-center gap-4 overflow-hidden rounded-xl bg-transparent bg-clip-border pt-0 pb-8  shadow-none">
                             <img
                                 src={img4}
                                 alt="tania andrew"
@@ -198,8 +198,8 @@ const Review = () => {
                         </div>
                     </div>
                     {/* mar 2 */}
-                    <div className="relative mx-20 flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
-                        <div className="relative mx-0 mt-4 flex items-center gap-4 overflow-hidden rounded-xl bg-transparent bg-clip-border pt-0 pb-8 text-gray-700 shadow-none">
+                    <div className="relative mx-20 flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border  shadow-none">
+                        <div className="relative mx-0 mt-4 flex items-center gap-4 overflow-hidden rounded-xl bg-transparent bg-clip-border pt-0 pb-8  shadow-none">
                             <img
                                 src={img2}
                                 alt="tania andrew"
@@ -290,8 +290,8 @@ const Review = () => {
                         </div>
                     </div>
                     {/* mar 3 */}
-                    <div className="relative mx-20 flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
-                        <div className="relative mx-0 mt-4 flex items-center gap-4 overflow-hidden rounded-xl bg-transparent bg-clip-border pt-0 pb-8 text-gray-700 shadow-none">
+                    <div className="relative mx-20 flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border  shadow-none">
+                        <div className="relative mx-0 mt-4 flex items-center gap-4 overflow-hidden rounded-xl bg-transparent bg-clip-border pt-0 pb-8  shadow-none">
                             <img
                                 src={img3}
                                 alt="tania andrew"
@@ -382,8 +382,8 @@ const Review = () => {
                         </div>
                     </div>
                     {/* mar 4 */}
-                    <div className="relative mx-20 flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
-                        <div className="relative mx-0 mt-4 flex items-center gap-4 overflow-hidden rounded-xl bg-transparent bg-clip-border pt-0 pb-8 text-gray-700 shadow-none">
+                    <div className="relative mx-20 flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border  shadow-none">
+                        <div className="relative mx-0 mt-4 flex items-center gap-4 overflow-hidden rounded-xl bg-transparent bg-clip-border pt-0 pb-8  shadow-none">
                             <img
                                 src={img5}
                                 alt="tania andrew"

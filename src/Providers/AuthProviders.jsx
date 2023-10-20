@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
-import {  GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
+import Swal from "sweetalert2";
 
 export const AuthContext = createContext(null)
-const AuthProviders = ({children}) => {
+const AuthProviders = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
 
@@ -31,9 +32,26 @@ const AuthProviders = ({children}) => {
     }
 
 
+
     // sign out
-    const logOut = () => {
-        return signOut(auth)
+    const logOut = async () => {
+        const result = await Swal.fire({
+            title: 'Are you sure?',
+            text: "",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, sign out!'
+        });
+        if (result.isConfirmed) {
+            signOut(auth);
+            Swal.fire(
+                'sign Out',
+                'sign Out Successfully',
+                'success'
+            );
+        }
     }
 
 
